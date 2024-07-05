@@ -10,26 +10,22 @@ import com.example.noteup.ui.models.Note
 @Database(entities = [Note::class], version = 1, exportSchema = false)
 abstract class NotesDatabase : RoomDatabase() {
 
-    abstract fun getNotesDao():NotesDao
+    abstract fun getNotesDao(): NotesDao
 
     companion object {
         @Volatile
-        var INSTANCE: NotesDatabase? = null
+        private var INSTANCE: NotesDatabase? = null
 
-        fun getDatabaseInstace(context: Context): NotesDatabase {
-            val tempInstant = INSTANCE
-            if (tempInstant != null) {
-                return tempInstant
-            }
-            synchronized(this) {
-                val roomDatabaseInstance =
-                    Room.databaseBuilder(context,
-                        NotesDatabase::class.java, "Note").allowMainThreadQueries().build()
-                INSTANCE = roomDatabaseInstance
-                return roomDatabaseInstance
+        fun getDatabaseInstance(context: Context): NotesDatabase {
+            return INSTANCE ?: synchronized(this) {
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    NotesDatabase::class.java,
+                    "notes_database"
+                ).build()
+                INSTANCE = instance
+                instance
             }
         }
     }
-
-
 }

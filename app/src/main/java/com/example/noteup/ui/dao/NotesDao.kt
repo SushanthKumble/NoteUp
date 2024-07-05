@@ -1,37 +1,29 @@
 package com.example.noteup.ui.dao
 
-import android.provider.ContactsContract.CommonDataKinds.Note
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.example.noteup.ui.models.Note
 
 @Dao
 interface NotesDao {
 
-    //function to insert a notes
-    @Insert(onConflict =OnConflictStrategy.REPLACE)
-    suspend fun insertNote(note:Note)
+    // Function to insert a note
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertNote(note: Note)
 
-    //function to get all the notes
+    // Function to get all the notes
     @Query("SELECT * FROM Notes")
-     fun getNotes():LiveData<List<Note>>
+    fun getNotes(): LiveData<List<Note>>
 
+    // Function to delete a note
+    @Query("DELETE FROM Notes WHERE id = :id")
+    suspend fun deleteNote(id: Int)
 
-     //function to delete note
-     @Query("DELETE FROM Notes WHERE id=:id")
-     suspend fun deleteNote(id:Int)
-
-
-     //function to update note
+    // Function to update a note
     @Update
-    suspend fun updateNote(note:Note)
-
-
-
-
-
+    suspend fun updateNote(note: Note)
 }

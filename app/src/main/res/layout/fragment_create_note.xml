@@ -94,7 +94,7 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="20dp"
         android:backgroundTint="@color/red_color"
-        android:src="@drawable/ic_baseline_done_24"
+        android:src="@drawable/baseline_done_24"
         app:tint="@color/white" />
 
 

@@ -3,12 +3,12 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("kotlin-parcelize")
     id("com.google.devtools.ksp")
-    id ("androidx.navigation.safeargs")
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
     namespace = "com.example.noteup"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.noteup"
@@ -52,16 +52,15 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 
     // ROOM
-    val roomVersion = "2.6.1"
-    implementation ("androidx.room:room-runtime:$roomVersion")
+    val roomVersion = "2.5.0"
+    implementation("androidx.room:room-runtime:2.5.0")
     ksp("androidx.room:room-compiler:$roomVersion")
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
     implementation ("androidx.room:room-ktx:$roomVersion")
     // Navigation
-    val navVersion = "2.7.5"
-    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
-    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.3.5")
+    implementation("androidx.navigation:navigation-ui-ktx:2.3.5")
     // Life Cycle Arch
     val lifecycleVersion = "2.6.2"
     // ViewModel

@@ -1,12 +1,13 @@
 package com.example.noteup.ui.repository
 
-import android.provider.ContactsContract.CommonDataKinds.Note
+
 import com.example.noteup.ui.dao.NotesDao
+import com.example.noteup.ui.models.Note
 
 class NotesRepository(val notedao:NotesDao) {
 
     //create Note
-    suspend fun createNote(note:Note){
+    suspend fun createNote(note: Note){
         notedao.insertNote(note)
     }
 
