@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navv_graph"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.example.noteup.ui.fragments.home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_create_note"
+            app:destination="@id/create_note" />
+        <action
+            android:id="@+id/action_home2_to_edit_note"
+            app:destination="@id/edit_note" />
+    </fragment>
+    <fragment
+        android:id="@+id/create_note"
+        android:name="com.example.noteup.ui.fragments.create_note"
+        android:label="fragment_create_note"
+        tools:layout="@layout/fragment_create_note" >
+        <action
+            android:id="@+id/action_create_note_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/edit_note"
+        android:name="com.example.noteup.ui.fragments.edit_note"
+        android:label="fragment_edit_note"
+        tools:layout="@layout/fragment_edit_note" >
+        <action
+            android:id="@+id/action_edit_note_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+</navigation>
