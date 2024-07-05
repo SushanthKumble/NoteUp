@@ -22,8 +22,8 @@ interface NotesDao {
 
 
      //function to delete note
-     @Delete
-     suspend fun deleteNote(note:Note)
+     @Query("DELETE FROM Notes WHERE id=:id")
+     suspend fun deleteNote(id:Int)
 
 
      //function to update note
