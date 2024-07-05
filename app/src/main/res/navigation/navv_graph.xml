@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home2"
-        android:name="com.example.noteup.ui.fragments.home"
+        android:name="com.example.noteup.ui.fragments.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/create_note"
-        android:name="com.example.noteup.ui.fragments.create_note"
+        android:name="com.example.noteup.ui.fragments.CreateNote"
         android:label="fragment_create_note"
         tools:layout="@layout/fragment_create_note" >
         <action
@@ -28,7 +28,7 @@
     </fragment>
     <fragment
         android:id="@+id/edit_note"
-        android:name="com.example.noteup.ui.fragments.edit_note"
+        android:name="com.example.noteup.ui.fragments.EditNote"
         android:label="fragment_edit_note"
         tools:layout="@layout/fragment_edit_note" >
         <action
