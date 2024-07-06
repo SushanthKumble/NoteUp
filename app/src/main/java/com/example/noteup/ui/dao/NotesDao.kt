@@ -15,6 +15,18 @@ interface NotesDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNote(note: Note)
 
+
+    //function to get the notes with high priority
+
+    @Query("SELECT * FROM Notes WHERE priority=3")
+     fun getHighNotes() :LiveData<List<Note>>
+    @Query("SELECT * FROM Notes WHERE priority=2")
+     fun getMediumNotes() :LiveData<List<Note>>
+
+    @Query("SELECT * FROM Notes WHERE priority=1")
+     fun getLowNotes() :LiveData<List<Note>>
+
+
     // Function to get all the notes
     @Query("SELECT * FROM Notes")
     fun getNotes(): LiveData<List<Note>>

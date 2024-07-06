@@ -32,7 +32,14 @@ class NotesViewModel(application: Application):AndroidViewModel(application) {
         viewModelScope.launch {
             NoteRepo.updateNote(note)
         }
-
     }
+    fun getHighNotes() :LiveData<List<Note>> = NoteRepo.getHighNotes()
+
+
+    fun getMediumNotes() :LiveData<List<Note>> = NoteRepo.getMediumNotes()
+
+
+    fun getLowNotes() :LiveData<List<Note>> = NoteRepo.getLowNotes()
+
 
 }

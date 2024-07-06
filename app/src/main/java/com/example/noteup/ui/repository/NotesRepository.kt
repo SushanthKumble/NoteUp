@@ -2,6 +2,7 @@ package com.example.noteup.ui.repository
 
 
 import androidx.lifecycle.LiveData
+import androidx.room.Query
 import com.example.noteup.ui.dao.NotesDao
 import com.example.noteup.ui.models.Note
 
@@ -28,6 +29,14 @@ class NotesRepository(val notedao:NotesDao) {
     suspend fun deleteNote(id:Int){
         notedao.deleteNote(id)
     }
+     fun getHighNotes() :LiveData<List<Note>> =notedao.getHighNotes()
+
+     fun getMediumNotes() :LiveData<List<Note>> = notedao.getMediumNotes()
+
+
+     fun getLowNotes() :LiveData<List<Note>> = notedao.getLowNotes()
+
+
 
 
 

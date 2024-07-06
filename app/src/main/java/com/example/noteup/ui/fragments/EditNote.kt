@@ -78,9 +78,6 @@ class EditNote : Fragment() {
             Navigation.findNavController(it).navigate(R.id.action_edit_note_to_home2)
             updateNote(it)
 
-
-
-
         }
 
 
