@@ -1,6 +1,7 @@
 package com.example.noteup.ui.repository
 
 
+import androidx.lifecycle.LiveData
 import com.example.noteup.ui.dao.NotesDao
 import com.example.noteup.ui.models.Note
 
@@ -13,8 +14,8 @@ class NotesRepository(val notedao:NotesDao) {
 
     //getallnote
 
-    fun getAllNotes(){
-        notedao.getNotes()
+    fun getAllNotes():LiveData<List<Note>> {
+       return  notedao.getNotes()
     }
 
     //update notes

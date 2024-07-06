@@ -2,6 +2,7 @@ package com.example.noteup.ui.viewModels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.example.noteup.ui.dao.NotesDao
 import com.example.noteup.ui.db.NotesDatabase
@@ -24,5 +25,7 @@ class NotesViewModel(application: Application):AndroidViewModel(application) {
             NoteRepo.createNote(notes)
         }
     }
+
+    fun getAllNotes():LiveData<List<Note>> =NoteRepo.getAllNotes()
 
 }
