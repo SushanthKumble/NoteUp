@@ -50,6 +50,9 @@ class CreateNote : Fragment() {
             binding.pYellow.setImageResource(0)
         }
 
+
+
+
         binding.btnSave.setOnClickListener {
             Navigation.findNavController(it).navigate(R.id.action_create_note_to_home2)
             createNotes(it)

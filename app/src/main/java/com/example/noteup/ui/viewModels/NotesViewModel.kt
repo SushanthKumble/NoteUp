@@ -28,4 +28,11 @@ class NotesViewModel(application: Application):AndroidViewModel(application) {
 
     fun getAllNotes():LiveData<List<Note>> =NoteRepo.getAllNotes()
 
+    fun updateNote(note:Note){
+        viewModelScope.launch {
+            NoteRepo.updateNote(note)
+        }
+
+    }
+
 }
