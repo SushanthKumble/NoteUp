@@ -33,7 +33,7 @@ interface NotesDao {
 
     // Function to delete a note
     @Query("DELETE FROM Notes WHERE id = :id")
-    suspend fun deleteNote(id: Int)
+    suspend fun deleteNote(id: Int?)
 
     // Function to update a note
     @Update

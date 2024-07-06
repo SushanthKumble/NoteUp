@@ -26,7 +26,7 @@ class NotesRepository(val notedao:NotesDao) {
 
     //delete note
 
-    suspend fun deleteNote(id:Int){
+    suspend fun deleteNote(id:Int?){
         notedao.deleteNote(id)
     }
      fun getHighNotes() :LiveData<List<Note>> =notedao.getHighNotes()

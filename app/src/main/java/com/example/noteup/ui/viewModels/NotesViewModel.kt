@@ -33,6 +33,13 @@ class NotesViewModel(application: Application):AndroidViewModel(application) {
             NoteRepo.updateNote(note)
         }
     }
+
+    fun deleteNote(id:Int?){
+        viewModelScope.launch {
+            NoteRepo.deleteNote(id)
+        }
+    }
+
     fun getHighNotes() :LiveData<List<Note>> = NoteRepo.getHighNotes()
 
 
