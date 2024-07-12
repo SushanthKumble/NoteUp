@@ -14,8 +14,9 @@ import com.example.noteup.R
 import com.example.noteup.databinding.FragmentCreateNoteBinding
 import com.example.noteup.ui.models.Note
 import com.example.noteup.ui.viewModels.NotesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Date
-
+@AndroidEntryPoint
 class CreateNote : Fragment() {
 
     private lateinit var binding: FragmentCreateNoteBinding

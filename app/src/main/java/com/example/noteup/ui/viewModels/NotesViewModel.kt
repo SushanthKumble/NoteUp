@@ -3,22 +3,20 @@ package com.example.noteup.ui.viewModels
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.noteup.ui.dao.NotesDao
 import com.example.noteup.ui.db.NotesDatabase
 import com.example.noteup.ui.models.Note
 import com.example.noteup.ui.repository.NotesRepository
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NotesViewModel(application: Application):AndroidViewModel(application) {
+class NotesViewModel():ViewModel() {
 
+ @Inject
+lateinit var  NoteRepo:NotesRepository
 
-    val NoteRepo:NotesRepository
-
-    init {
-        val dao=NotesDatabase.getDatabaseInstance(application).getNotesDao()
-        NoteRepo= NotesRepository(dao)
-    }
 
     fun addNotes(notes: Note) {
         viewModelScope.launch {

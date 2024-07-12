@@ -5,8 +5,9 @@ import androidx.lifecycle.LiveData
 import androidx.room.Query
 import com.example.noteup.ui.dao.NotesDao
 import com.example.noteup.ui.models.Note
+import javax.inject.Inject
 
-class NotesRepository(val notedao:NotesDao) {
+class NotesRepository @Inject constructor(private val notedao:NotesDao) {
 
     //create Note
     suspend fun createNote(note: Note){

@@ -15,7 +15,9 @@ import com.example.noteup.R
 import com.example.noteup.databinding.FragmentHomeBinding
 import com.example.noteup.ui.adapters.NotesAdapter
 import com.example.noteup.ui.viewModels.NotesViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class Home: Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: NotesViewModel by viewModels()

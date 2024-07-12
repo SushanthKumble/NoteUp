@@ -24,8 +24,10 @@ import com.example.noteup.databinding.FragmentEditNoteBinding
 import com.example.noteup.ui.models.Note
 import com.example.noteup.ui.viewModels.NotesViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Date
 
+@AndroidEntryPoint
 class EditNote : Fragment(), MenuProvider {
 
     val notes by navArgs<EditNoteArgs>()
