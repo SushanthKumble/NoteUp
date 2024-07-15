@@ -26,14 +26,12 @@ A simple and efficient notes app built using Kotlin, Dagger Hilt, Coroutines, Je
 
 ## Screenshots
 
-### Home Screen
-![Home Screen](screenshots/home_screen.png)
+### Home Screen/### Add Note Screen
+![Home Screen](others/113.png)
 
-### Add Note Screen
-(others/113.png)
 
 ### Update Note Screen
-others/112.png
+![Update Screen](others/112.png)
 
 
 
